@@ -19,7 +19,7 @@ resource "packet_device" "dcos_bootstrap" {
     command = "rm -rf ./do-install.sh"
   }
   provisioner "local-exec" {
-    command = "echo BOOTSTRAP=\"${packet_device.dcos_bootstrap.network.0.address}\" >> ips.txt"
+    command = "echo BOOTSTRAP=\"${packet_device.dcos_bootstrap.network.2.address}\" >> ips.txt"
   }
   provisioner "local-exec" {
     command = "echo CLUSTER_NAME=\"${var.dcos_cluster_name}\" >> ips.txt"
@@ -70,7 +70,7 @@ resource "packet_device" "dcos_master" {
     command = "rm -rf ./do-install.sh"
   }
   provisioner "local-exec" {
-    command = "echo ${format("MASTER_%02d", count.index)}=\"${self.network.0.address}\" >> ips.txt"
+    command = "echo ${format("MASTER_%02d", count.index)}=\"${self.network.2.address}\" >> ips.txt"
   }
   provisioner "local-exec" {
     command = "while [ ! -f ./do-install.sh ]; do sleep 1; done"
