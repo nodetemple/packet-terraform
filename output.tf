@@ -2,7 +2,7 @@ output "agent-ip" {
   value = "${join(",", packet_device.dcos_agent.*.network.2.address)}"
 }
 output "agent-public-ip" {
-  value = "${join(",", packet_device.dcos_public_agent.*.network.2.address)}"
+  value = "${join(",", packet_device.dcos_public_agent.*.network.0.address)}"
 }
 output "master-ip" {
   value = "${join(",", packet_device.dcos_master.*.network.2.address)}"
