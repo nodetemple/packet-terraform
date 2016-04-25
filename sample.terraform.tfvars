@@ -23,4 +23,4 @@ dcos_public_agent_count = "3"
 
 dcos_ssh_key_path = "./packet-key"
 
-dcos_ssh_public_key_path = "packet-key.pub"
+dcos_ssh_public_key_path = "./packet-key.pub"
