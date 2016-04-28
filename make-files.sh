@@ -24,7 +24,7 @@ cat > ip-detect << FIN
 #!/usr/bin/env bash
 set -o nounset -o errexit
 export PATH=/usr/sbin:/usr/bin:\$PATH
-echo \$(curl -s https://metadata.packet.net/metadata | jq -r '.network.addresses[] | select(.public == true and .address_family == 4).address' | head -1)
+echo \$(curl -s https://metadata.packet.net/metadata | jq -r '.network.addresses[] | select(.public == false and .address_family == 4).address' | head -1)
 FIN
 
 # Make a script
