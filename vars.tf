@@ -30,16 +30,16 @@ variable "packet_boot_type" {
 variable "dcos_cluster_name" {
   description = "Name of your cluster. Alpha-numeric and hyphens only, please."
   default = "packet-dcos"
-} 
+}
 
 variable "dcos_master_count" {
-  default = "3"
+  default = "1"
   description = "Number of master nodes. 1, 3, or 5."
 }
 
 variable "dcos_agent_count" {
   description = "Number of agents to deploy"
-  default = "4"
+  default = "1"
 }
 
 variable "dcos_public_agent_count" {
@@ -55,7 +55,7 @@ variable "dcos_ssh_public_key_path" {
 variable "dcos_installer_url" {
   description = "Path to get DCOS"
   default = "https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh"
-} 
+}
 
 variable "dcos_ssh_key_path" {
   description = "Path to your private SSH key for the project"
