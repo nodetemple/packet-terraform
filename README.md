@@ -11,6 +11,8 @@ Clone or download repo.
 
 Copy `sample.terraform.tfvars` to `terraform.tfvars` and insert your variables.
 
+Run `ssh-keygen -t rsa -f ./packet-key` (leave password empty).
+
 Run `terraform apply`
 
 ##### Theory of Operation:
